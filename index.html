@@ -8,8 +8,8 @@
 <meta property="og:title" content="SPORTS LINK｜スポーツで、人と人をつなぐ。">
 <meta property="og:description" content="挑戦できる場所と、成長できるきっかけを地域に。">
 <meta property="og:type" content="website">
-<!-- TODO(運営): OGP画像を用意したら og:image を設定 -->
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111'/%3E%3Ccircle cx='22' cy='32' r='9' fill='none' stroke='%23B6F09C' stroke-width='6'/%3E%3Ccircle cx='42' cy='32' r='9' fill='none' stroke='%23B6F09C' stroke-width='6'/%3E%3C/svg%3E">
+<meta property="og:image" content="https://syunta6921.github.io/sports-link/hero.jpg">
+<link rel="icon" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@700;800;900&display=swap" rel="stylesheet">
@@ -252,6 +252,14 @@ section{padding:110px 0}
   .reveal{opacity:1;transform:none}
   .sec-title{background-size:100% 12px}
 }
+
+.media-title{font-weight:900;font-size:19px;margin-top:36px}
+.media-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:14px}
+.media-grid figure{border:1.5px solid var(--ink);border-radius:14px;overflow:hidden;background:#000}
+.media-grid img,.media-grid video{width:100%;height:150px;object-fit:cover}
+.media-grid figcaption{background:var(--white);font-size:13px;font-weight:700;padding:7px 12px}
+.media-grid .wide{grid-column:span 2}
+@media(max-width:760px){.media-grid{grid-template-columns:repeat(2,1fr)}}
 </style>
 </head>
 <body>
@@ -274,7 +282,7 @@ const SITE = {
       title: "アジリティスクール 第1期（全4回）",
       target: "小学生・中学生",
       place: "戸田市内の小学校体育館（会場は申込確定者にメールでご案内）",
-      time: "土曜 16:30〜18:00（受付15:30）",
+      time: "土曜 16:30〜18:00（受付15:45）",
       price: "1回 1,500円／全4回 5,000円",
       status: "info",
       statusLabel: "開催中",
@@ -285,6 +293,22 @@ const SITE = {
         {date:"2026-11-21", theme:"リアクション・身体操作"},
         {date:"2026-11-28", theme:"瞬発力・総合"}
       ]
+    },
+    {
+      title: "アジリティスクール 第2期（全4回）",
+      target: "小学生・中学生",
+      place: "戸田市内の小学校体育館（会場は申込確定者にメールでご案内）",
+      time: "土曜 16:30〜18:00（受付15:45）",
+      price: "1回 1,500円／全4回 5,000円",
+      status: "soon",
+      statusLabel: "近日募集開始",
+      applyUrl: "",
+      sessions: [
+        {date:"2026-12-05", theme:"基本動作・一歩目"},
+        {date:"2026-12-12", theme:"ターン・方向転換"},
+        {date:"2026-12-19", theme:"リアクション・身体操作"},
+        {date:"2026-12-26", theme:"瞬発力・総合"}
+      ]
     }
   ]
 };
@@ -293,7 +317,7 @@ const SITE = {
 <header class="hd" id="top-header">
   <div class="wrap">
     <a href="#top" class="logo" aria-label="SPORTS LINK トップへ">
-      <svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="10" fill="#111"/><circle cx="15" cy="20" r="6.5" fill="none" stroke="#B6F09C" stroke-width="4"/><circle cx="25" cy="20" r="6.5" fill="none" stroke="#B6F09C" stroke-width="4"/></svg>
+      <img class="logo-mark" src="logo.png" alt="">
       <b>SPORTS LINK</b>
     </a>
     <button class="menu-btn" aria-label="メニューを開く" aria-expanded="false" aria-controls="gnav"><span></span><span></span><span></span></button>
@@ -469,6 +493,13 @@ const SITE = {
       <article class="act reveal"><svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="14" fill="none" stroke="#111" stroke-width="4"/><path d="M22 4 V10 M22 34 V40 M4 22 H10 M34 22 H40" stroke="#111" stroke-width="4" stroke-linecap="round"/><circle cx="22" cy="22" r="5" fill="#B6F09C" stroke="#111" stroke-width="2"/></svg><p class="r en">ROUND 03・11/21</p><h3>リアクション・身体操作</h3><p>合図への反応と身体の使い方。</p></article>
       <article class="act reveal"><svg viewBox="0 0 44 44" aria-hidden="true"><path d="M24 4 L10 26 H22 L18 40 L34 16 H22 Z" fill="#B6F09C" stroke="#111" stroke-width="3" stroke-linejoin="round"/></svg><p class="r en">ROUND 04・11/28</p><h3>瞬発力・総合</h3><p>これまでの動きをつなげて総まとめ。</p></article>
     </div>
+    <h3 class="media-title">練習の様子（動画・写真）</h3>
+    <div class="media-grid">
+      <figure class="wide"><video src="drill.mp4" poster="gym3.jpg" controls playsinline preload="none"></video><figcaption>グループドリル</figcaption></figure>
+      <figure><img src="gym3.jpg" alt="ウォームアップの様子" loading="lazy"><figcaption>ウォームアップ</figcaption></figure>
+      <figure><video src="drill2.mp4" poster="hero.jpg" controls playsinline preload="none"></video><figcaption>ステップ練習</figcaption></figure>
+      <figure><video src="v3.mp4" poster="thumb_v3.jpg" controls playsinline preload="none"></video><figcaption>練習の様子</figcaption></figure><figure><video src="v4.mp4" poster="thumb_v4.jpg" controls playsinline preload="none"></video><figcaption>練習の様子</figcaption></figure><figure><video src="v5.mp4" poster="thumb_v5.jpg" controls playsinline preload="none"></video><figcaption>練習の様子</figcaption></figure><figure><video src="v6.mp4" poster="thumb_v6.jpg" controls playsinline preload="none"></video><figcaption>練習の様子</figcaption></figure><figure><video src="v7.mp4" poster="thumb_v7.jpg" controls playsinline preload="none"></video><figcaption>練習の様子</figcaption></figure><figure><video src="v8.mp4" poster="thumb_v8.jpg" controls playsinline preload="none"></video><figcaption>練習の様子</figcaption></figure><figure><video src="v9.mp4" poster="thumb_v9.jpg" controls playsinline preload="none"></video><figcaption>練習の様子</figcaption></figure><figure><video src="v10.mp4" poster="thumb_v10.jpg" controls playsinline preload="none"></video><figcaption>練習の様子</figcaption></figure>
+    </div>
   </div>
 </section>
 
@@ -548,7 +579,7 @@ const SITE = {
   <div class="wrap">
     <div class="ft-grid">
       <div>
-        <a href="#top" class="logo"><svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="10" fill="#111"/><circle cx="15" cy="20" r="6.5" fill="none" stroke="#B6F09C" stroke-width="4"/><circle cx="25" cy="20" r="6.5" fill="none" stroke="#B6F09C" stroke-width="4"/></svg><b>SPORTS LINK</b></a>
+        <a href="#top" class="logo"><img class="logo-mark" src="logo.png" alt=""><b>SPORTS LINK</b></a>
         <p style="margin-top:14px">スポーツで、人と人をつなぐ。<br>埼玉県戸田市を中心に活動しています。</p>
         <a class="neko ext" id="neko-link" target="_blank" rel="noopener noreferrer" href="#">
           <svg viewBox="0 0 26 26" aria-hidden="true"><ellipse cx="13" cy="17" rx="7" ry="6" fill="#B6F09C"/><circle cx="6" cy="9" r="2.6" fill="#B6F09C"/><circle cx="11" cy="6" r="2.6" fill="#B6F09C"/><circle cx="16" cy="6" r="2.6" fill="#B6F09C"/><circle cx="21" cy="9" r="2.6" fill="#B6F09C"/></svg>
