@@ -2,714 +2,419 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SPORTS LINK｜スポーツで、人と人をつなぐ。</title>
-<meta name="description" content="SPORTS LINKは埼玉県戸田市周辺で、小・中学生向けのアジリティスクールやチームへの出張トレーニングを行い、スポーツをする人・教える人・地域をつなぎます。">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SPORTS LINK｜スポーツで、人と人をつなぐ。戸田市のアジリティスクール</title>
+<meta name="description" content="SPORTS LINKは埼玉県戸田市を拠点に、スポーツで人と人をつなぐ活動をしています。小学生・中学生向けアジリティスクール（土曜16:30〜18:00）を開催中。">
 <meta property="og:title" content="SPORTS LINK｜スポーツで、人と人をつなぐ。">
-<meta property="og:description" content="挑戦できる場所と、成長できるきっかけを地域に。">
+<meta property="og:description" content="戸田市で小学生・中学生向けアジリティスクールを開催中。スポーツをする人・教える人・地域をつなぎます。">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://syunta6921.github.io/sports-link/hero.jpg">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111'/%3E%3Ccircle cx='22' cy='32' r='9' fill='none' stroke='%23B6F09C' stroke-width='6'/%3E%3Ccircle cx='42' cy='32' r='9' fill='none' stroke='%23B6F09C' stroke-width='6'/%3E%3C/svg%3E">
+<link rel="icon" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Archivo:wght@600;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --white:#FFFFFF; --base:#F7F8F6; --ink:#111111; --lime:#B6F09C;
-  --green:#26352B; --line:#DDE5DC; --muted:#4a524c;
-  --radius:18px; --max:1120px;
-  --ease:cubic-bezier(.2,.7,.2,1);
+  --ink:#111417; --sub:#4b5563; --line:#e5e7eb;
+  --lime:#c6f542; --lime-d:#9ecb1e; --navy:#07324d;
+  --bg:#ffffff; --bg2:#f6f8f3;
+  --max:1120px; --head:64px;
+  --shadow:0 10px 30px rgba(10,20,10,.10);
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:76px}
-body{font-family:"Noto Sans JP",system-ui,sans-serif;color:var(--ink);background:var(--white);line-height:1.8;font-size:16px;-webkit-font-smoothing:antialiased}
-img,svg{display:block;max-width:100%}
-a{color:inherit}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--head) + 10px)}
+body{font-family:"Noto Sans JP",sans-serif;color:var(--ink);background:var(--bg);line-height:1.75;font-size:16px;-webkit-font-smoothing:antialiased}
+img,video{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
-.en{font-family:Inter,"Noto Sans JP",sans-serif;letter-spacing:.04em}
-:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:6px}
-.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:#fff;padding:8px 14px;z-index:999}
-.skip:focus{left:8px}
-
-/* ===== header ===== */
-.hd{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .3s,box-shadow .3s,height .3s;height:76px;display:flex;align-items:center}
-.hd.scrolled{background:rgba(255,255,255,.88);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line);height:62px}
-.hd .wrap{display:flex;align-items:center;justify-content:space-between;width:100%}
-.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:900}
-.logo-mark{width:34px;height:34px}
-.logo b{font-family:Inter,sans-serif;font-size:18px;letter-spacing:.06em}
-.nav{display:flex;align-items:center;gap:26px}
-.nav a{text-decoration:none;font-family:Inter,sans-serif;font-weight:800;font-size:13px;letter-spacing:.1em;position:relative}
-.nav a.txt::after{content:"";position:absolute;left:0;bottom:-4px;height:3px;width:0;background:var(--lime);transition:width .3s var(--ease)}
-.nav a.txt:hover::after{width:100%}
-.menu-btn{display:none;background:none;border:0;width:48px;height:48px;cursor:pointer}
-.menu-btn span{display:block;width:24px;height:2.5px;background:var(--ink);margin:5px auto;transition:transform .3s,opacity .3s}
-.menu-btn[aria-expanded="true"] span:nth-child(1){transform:translateY(7.5px) rotate(45deg)}
-.menu-btn[aria-expanded="true"] span:nth-child(2){opacity:0}
-.menu-btn[aria-expanded="true"] span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg)}
-
-/* ===== buttons ===== */
-.btn{display:inline-flex;align-items:center;gap:10px;min-height:52px;padding:0 26px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid var(--ink);transition:background .25s,color .25s,transform .12s;font-size:15px;cursor:pointer}
-.btn .arr{transition:transform .25s var(--ease)}
-.btn:hover .arr{transform:translateX(4px)}
-.btn:active{transform:scale(.98)}
-.btn-lime{background:var(--lime);border-color:var(--lime);color:var(--ink)}
-.btn-lime:hover{background:var(--ink);border-color:var(--ink);color:var(--lime)}
-.btn-ghost{background:transparent}
-.btn-ghost:hover{background:var(--ink);color:#fff}
-.btn-sm{min-height:42px;padding:0 18px;font-size:13px}
-.ext::after{content:"↗";font-size:.85em;margin-left:2px}
-
-/* ===== hero ===== */
-.hero{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden;background:var(--white);padding:120px 0 80px}
-.hero-bg{position:absolute;inset:0;pointer-events:none}
-.hero-bg .grid{position:absolute;inset:0;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(ellipse at 70% 40%,#000 0%,transparent 70%);-webkit-mask-image:radial-gradient(ellipse at 70% 40%,#000 0%,transparent 70%);opacity:.7}
-.orbit{position:absolute;border-radius:50%;border:2px solid var(--lime)}
-.orbit.o1{width:520px;height:520px;right:-120px;top:8%;animation:drift 18s ease-in-out infinite}
-.orbit.o2{width:260px;height:260px;right:220px;top:52%;border-color:var(--ink);opacity:.12;animation:drift 22s ease-in-out infinite reverse}
-.trail{position:absolute;right:0;top:0;width:60%;height:100%}
-.trail path{stroke-dasharray:6 14;animation:dash 6s linear infinite}
-@keyframes drift{50%{transform:translate(-24px,18px)}}
-@keyframes dash{to{stroke-dashoffset:-200}}
-.hero .wrap{position:relative;width:100%;display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
-.eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:Inter,sans-serif;font-weight:800;font-size:12px;letter-spacing:.18em;margin-bottom:22px}
-.eyebrow::before{content:"";width:28px;height:3px;background:var(--lime)}
-.hero h1{font-size:clamp(34px,5.2vw,66px);line-height:1.18;font-weight:900;letter-spacing:-.01em}
-.hero h1 .hl{background:linear-gradient(transparent 58%,var(--lime) 58%);padding:0 .06em}
-.hero .sub{margin-top:22px;font-size:clamp(16px,1.6vw,19px);font-weight:500;color:var(--muted)}
-.hero .ctas{margin-top:36px;display:flex;flex-wrap:wrap;gap:14px}
-.hero .ig-mini{margin-top:22px;font-size:14px;display:inline-flex;align-items:center;gap:8px;font-weight:700}
-.hero-art{position:relative;aspect-ratio:1/1;max-width:440px;justify-self:end;width:100%}
-.hero-art .disc{position:absolute;inset:6%;border-radius:50%;background:var(--lime)}
-.hero-art svg{position:absolute;inset:0;width:100%;height:100%}
-.hero-tag{position:absolute;left:-6%;bottom:8%;background:var(--ink);color:#fff;border-radius:14px;padding:12px 16px;font-size:13px;font-weight:700;line-height:1.5}
-.hero-tag span{color:var(--lime);font-family:Inter,sans-serif;font-size:11px;letter-spacing:.14em;display:block}
-.fade-in{animation:fin .6s var(--ease) both}
-.fade-in.d2{animation-delay:.12s}.fade-in.d3{animation-delay:.24s}
-@keyframes fin{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-
-/* ===== sections ===== */
-section{padding:110px 0}
-.sec-head{margin-bottom:48px}
-.sec-label{font-family:Inter,sans-serif;font-weight:800;font-size:13px;letter-spacing:.2em;display:flex;align-items:center;gap:12px;margin-bottom:12px}
-.sec-label .no{background:var(--ink);color:var(--lime);border-radius:6px;padding:2px 8px;font-size:11px}
-.sec-title{font-size:clamp(28px,4vw,44px);font-weight:900;line-height:1.3;display:inline;background-image:linear-gradient(var(--lime),var(--lime));background-repeat:no-repeat;background-size:0% 12px;background-position:0 88%;transition:background-size .8s var(--ease) .2s}
-.is-in .sec-title,.sec-head.is-in .sec-title{background-size:100% 12px}
-.sec-lead{margin-top:18px;max-width:640px;color:var(--muted)}
-.bg-base{background:var(--base)}
-.bg-dark{background:var(--green);color:#fff}
-.bg-dark .sec-lead{color:#cfd8d0}
-
-.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
-.reveal.is-in{opacity:1;transform:none}
-
-/* intro */
-.keys{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.key{background:var(--white);border:1.5px solid var(--line);border-radius:var(--radius);padding:30px 26px}
-.key .k-en{font-family:Inter,sans-serif;font-weight:900;font-size:13px;letter-spacing:.16em;color:var(--muted)}
-.key h3{font-size:32px;font-weight:900;margin:6px 0 8px}
-.key p{font-size:15px;color:var(--muted)}
-.key svg{width:52px;height:52px;margin-bottom:14px}
-
-/* program */
-.progs{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
-.prog{position:relative;background:var(--white);border:1.5px solid var(--line);border-radius:var(--radius);padding:28px;display:flex;flex-direction:column;transition:transform .3s var(--ease),box-shadow .3s}
-.prog::before{content:"";position:absolute;left:28px;top:0;height:4px;width:48px;background:var(--lime);border-radius:0 0 4px 4px;transition:width .4s var(--ease)}
-.prog-pic{height:150px;border-radius:12px;background:var(--base);display:grid;place-items:center;margin-bottom:22px;overflow:hidden}
-.prog-pic svg{width:110px;height:110px;transition:transform .4s var(--ease)}
-@media (hover:hover){
-  .prog:hover{transform:translateY(-3px);box-shadow:0 14px 30px -18px rgba(17,17,17,.35)}
-  .prog:hover::before{width:calc(100% - 56px)}
-  .prog:hover .prog-pic svg{transform:scale(1.04)}
-}
-.prog .tag{font-size:12px;font-weight:700;background:var(--ink);color:var(--lime);border-radius:999px;padding:3px 12px;align-self:flex-start;margin-bottom:10px}
-.prog h3{font-size:22px;font-weight:900;line-height:1.45;margin-bottom:8px}
-.prog p{font-size:15px;color:var(--muted)}
-.facts{margin:16px 0 20px;display:grid;gap:6px;font-size:14px}
-.facts div{display:grid;grid-template-columns:78px 1fr;gap:10px;border-top:1px dashed var(--line);padding-top:6px}
-.facts dt{font-weight:700}
-.prog .more{margin-top:auto}
-
-/* feature */
-.feats{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-.feat{border-top:3px solid var(--lime);padding-top:22px}
-.feat .num{font-family:Inter,sans-serif;font-weight:900;font-size:58px;line-height:1;color:var(--lime)}
-.feat h3{font-size:20px;font-weight:900;margin:14px 0 8px;line-height:1.5}
-.feat p{font-size:15px;color:#cfd8d0}
-
-/* event */
-.events{display:grid;gap:18px}
-.ev{display:grid;grid-template-columns:150px 1fr auto;gap:26px;align-items:center;background:var(--white);border:1.5px solid var(--line);border-radius:var(--radius);padding:24px 28px}
-.ev-date{font-family:Inter,sans-serif;font-weight:900;line-height:1.1}
-.ev-date .m{font-size:13px;letter-spacing:.14em;color:var(--muted)}
-.ev-date .d{font-size:30px}
-.status{display:inline-block;font-size:12px;font-weight:700;border-radius:999px;padding:3px 12px;margin-bottom:8px}
-.st-open{background:var(--lime)}
-.st-soon{background:var(--base);border:1px solid var(--line)}
-.st-closed{background:#e9e9e9;color:#555}
-.st-info{background:var(--ink);color:var(--lime)}
-.ev h3{font-size:19px;font-weight:900;line-height:1.5}
-.ev .meta{font-size:14px;color:var(--muted);margin-top:4px}
-.sessions{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
-.sess{font-size:13px;border:1.5px solid var(--line);border-radius:10px;padding:4px 10px;background:var(--white)}
-.sess.done{color:#888;text-decoration:line-through;background:var(--base)}
-.sess b{font-family:Inter,sans-serif}
-.note{font-size:13px;color:var(--muted);margin-top:16px}
-.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}
-.flow div{background:var(--white);border:1.5px solid var(--line);border-radius:14px;padding:16px}
-.flow b{font-family:Inter,sans-serif;font-size:13px;color:var(--muted);display:block;letter-spacing:.06em}
-.flow h4{font-size:15px;font-weight:900;margin:2px 0 4px}
-.flow p{font-size:13px;color:var(--muted)}
-.flow div{transition:transform .3s var(--ease),box-shadow .3s}
-.ev{transition:transform .3s var(--ease),box-shadow .3s}
-.key,.act{transition:transform .3s var(--ease),box-shadow .3s}
-@media (hover:hover){
-  .flow div:hover{transform:translateY(-3px);box-shadow:0 12px 26px -16px rgba(17,17,17,.3)}
-  .ev:hover{transform:translateY(-2px);box-shadow:0 14px 30px -18px rgba(17,17,17,.3)}
-  .key:hover,.act:hover{transform:translateY(-3px);box-shadow:0 12px 26px -16px rgba(17,17,17,.28)}
-}
-.hero-art .disc{animation:pulse 5s ease-in-out infinite}
-.hero-art svg{animation:bob 4.5s ease-in-out infinite}
-@keyframes pulse{50%{transform:scale(1.035)}}
-@keyframes bob{50%{transform:translateY(-9px)}}
-.sess{transition:transform .2s var(--ease),background .2s}
-.sess:hover{transform:translateY(-2px);background:var(--base)}
-.hero-art .photo{position:absolute;inset:3%;width:94%;height:94%;object-fit:cover;border-radius:28px;box-shadow:0 24px 50px -20px rgba(17,17,17,.35);animation:bob 5s ease-in-out infinite}
-.prog-pic img{width:100%;height:100%;object-fit:cover}
-.media-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:16px;margin-top:26px}
-.media-grid figure{border-radius:var(--radius);overflow:hidden;border:1.5px solid var(--line);background:#fff;display:flex;flex-direction:column}
-.media-grid .media-main{grid-row:span 2}
-.media-grid video,.media-grid img{width:100%;flex:1;min-height:0;object-fit:cover}
-.media-grid figcaption{padding:10px 14px;font-size:13px;color:var(--muted)}
-.video-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:16px}
-.video-grid figure{border-radius:14px;overflow:hidden;border:1.5px solid var(--line);background:#fff}
-.video-grid video{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:#111}
-.video-grid figcaption{padding:8px 12px;font-size:12px;color:var(--muted)}
-@media (max-width:820px){.video-grid{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:820px){.media-grid{grid-template-columns:1fr}.media-grid .media-main{grid-row:auto}.media-grid video,.media-grid img{aspect-ratio:16/9;flex:none}}
-@media (max-width:820px){.flow{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:520px){.flow{grid-template-columns:1fr}}
-
-/* activity */
-.acts{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.act{background:var(--white);border:1.5px solid var(--line);border-radius:var(--radius);padding:22px}
-.act .r{font-family:Inter,sans-serif;font-weight:900;font-size:12px;letter-spacing:.16em;color:var(--muted)}
-.act h3{font-size:17px;font-weight:900;margin:6px 0 4px;line-height:1.5}
-.act p{font-size:13px;color:var(--muted)}
-.act svg{width:44px;height:44px;margin-bottom:10px}
-
-/* instagram */
-.ig{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
-.ig-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
-.ig-tile{aspect-ratio:4/5;border-radius:10px;background:var(--white);border:1.5px solid var(--line);display:flex;flex-direction:column;justify-content:space-between;padding:10px;text-decoration:none;transition:transform .3s var(--ease)}
-.ig-tile:hover{transform:translateY(-3px)}
-.ig-tile small{font-family:Inter,sans-serif;font-size:9px;font-weight:800;letter-spacing:.1em;display:flex;justify-content:space-between}
-.ig-tile b{font-size:13px;line-height:1.4;font-weight:900}
-.ig-tile b em{font-style:normal;background:var(--lime)}
-.ig-tile.dk{background:var(--ink);color:#fff;border-color:var(--ink)}
-.ig-tile.dk b em{color:var(--ink)}
-.ig-tile.lm{background:var(--lime);border-color:var(--lime)}
-
-/* faq */
-.faq{display:grid;gap:12px;max-width:860px}
-.faq details{background:var(--white);border:1.5px solid var(--line);border-radius:14px;padding:0 22px}
-.faq summary{list-style:none;cursor:pointer;padding:20px 34px 20px 0;font-weight:700;position:relative}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary::before{content:"Q";font-family:Inter,sans-serif;font-weight:900;color:var(--ink);background:var(--lime);border-radius:6px;padding:0 7px;margin-right:12px;font-size:14px}
-.faq summary::after{content:"+";position:absolute;right:0;top:50%;transform:translateY(-50%);font-size:24px;font-weight:400;transition:transform .3s}
-.faq details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
-.faq .a{padding:0 0 20px;font-size:15px;color:var(--muted)}
-
-/* contact */
-.contacts{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.ct{border:1.5px solid var(--line);border-radius:var(--radius);padding:24px;display:flex;flex-direction:column;gap:10px;text-decoration:none;background:var(--white);transition:border-color .25s,transform .3s var(--ease)}
-.ct:hover{border-color:var(--ink);transform:translateY(-3px)}
-.ct .who{font-size:12px;font-weight:700;color:var(--muted)}
-.ct h3{font-size:18px;font-weight:900;line-height:1.5}
-.ct p{font-size:13px;color:var(--muted)}
-.ct .go{margin-top:auto;font-weight:700;font-size:14px}
-
-/* final cta */
-.final{background:var(--ink);color:#fff;text-align:center;position:relative;overflow:hidden}
-.final h2{font-size:clamp(34px,6vw,68px);font-weight:900;line-height:1.25}
-.final h2 span{color:var(--lime)}
-.final .ctas{margin-top:36px;display:flex;justify-content:center;flex-wrap:wrap;gap:14px}
-.final .btn-ghost{border-color:#fff;color:#fff}
-.final .btn-ghost:hover{background:#fff;color:var(--ink)}
-.final .ring{position:absolute;border:2px solid var(--lime);border-radius:50%;opacity:.25}
-
-/* footer */
-.ft{background:var(--green);color:#dfe7e0;padding:70px 0 30px;font-size:14px}
-.ft-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:40px}
-.ft .logo{color:#fff}
-.ft h4{font-family:Inter,sans-serif;font-size:12px;letter-spacing:.18em;color:var(--lime);margin-bottom:12px}
-.ft ul{list-style:none;display:grid;gap:8px}
-.ft a{text-decoration:none}
-.ft a:hover{text-decoration:underline}
-.neko{margin-top:18px;display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:10px 14px}
-.neko svg{width:26px;height:26px}
-.neko small{display:block;font-size:11px;opacity:.75}
-.privacy{margin-top:40px;padding-top:24px;border-top:1px solid rgba(255,255,255,.15);font-size:12px;opacity:.85;line-height:1.9}
-.copy{margin-top:20px;font-size:12px;opacity:.7}
-
-/* responsive */
-@media (max-width:960px){
-  .hero .wrap{grid-template-columns:1fr}
-  .hero-art{justify-self:center;max-width:320px;order:-1}
-  .hero-tag{left:0}
-  .keys,.feats{grid-template-columns:1fr}
-  .progs{grid-template-columns:1fr}
-  .acts{grid-template-columns:repeat(2,1fr)}
-  .ig{grid-template-columns:1fr}
-  .contacts{grid-template-columns:repeat(2,1fr)}
-  .ft-grid{grid-template-columns:1fr}
-  .orbit.o1{width:340px;height:340px;right:-160px}
-}
-@media (max-width:820px){
-  .menu-btn{display:block}
-  .nav{position:fixed;inset:0 0 0 auto;width:min(84vw,340px);background:var(--white);flex-direction:column;align-items:flex-start;padding:96px 28px 28px;gap:6px;transform:translateX(100%);transition:transform .35s var(--ease);box-shadow:-10px 0 40px rgba(0,0,0,.08)}
-  .nav.open{transform:none}
-  .nav a.txt{font-size:18px;padding:12px 0;width:100%;border-bottom:1px solid var(--line)}
-  .nav .btn{margin-top:18px;width:100%;justify-content:center}
-  .menu-btn{position:relative;z-index:60}
-  section{padding:80px 0}
-  .ev{grid-template-columns:1fr;gap:12px}
-}
-@media (max-width:520px){
-  .sec-title{font-size:25px}
-  .acts,.contacts{grid-template-columns:1fr}
-  .hero{padding-top:100px}
-  .hero .ctas .btn{width:100%;justify-content:center}
+section{padding:64px 0}
+.sec-head{margin-bottom:28px}
+.sec-label{font-family:"Archivo",sans-serif;font-size:12px;font-weight:800;letter-spacing:.22em;color:var(--lime-d);margin-bottom:6px}
+.sec-title{font-size:clamp(26px,4.6vw,38px);font-weight:900;line-height:1.3}
+.sec-title .hl{background:linear-gradient(transparent 62%, var(--lime) 62%)}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:700;border-radius:999px;padding:13px 26px;border:2px solid var(--ink);transition:.2s;background:#fff}
+.btn.primary{background:var(--ink);color:#fff}
+.btn.primary:hover{background:#000;transform:translateY(-2px)}
+.btn.lime{background:var(--lime);border-color:var(--ink);color:var(--ink)}
+.btn.lime:hover{transform:translateY(-2px)}
+.btn.small{padding:9px 18px;font-size:14px}
+header.site{position:fixed;inset:0 0 auto 0;height:var(--head);z-index:60;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.head-in{max-width:var(--max);margin:0 auto;padding:0 20px;height:100%;display:flex;align-items:center;gap:14px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:900;font-size:19px;letter-spacing:.02em}
+.logo img{width:40px;height:40px}
+.logo .x{color:var(--lime-d)}
+nav.main{display:flex;gap:26px;margin-left:auto;font-weight:500;font-size:15px}
+nav.main a{padding:6px 2px;border-bottom:2px solid transparent}
+nav.main a:hover{border-color:var(--lime-d)}
+.head-cta{margin-left:8px}
+.burger{display:none;margin-left:auto;width:44px;height:44px;border:1px solid var(--line);border-radius:10px;background:#fff;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px}
+.burger span{display:block;width:20px;height:2px;background:var(--ink)}
+.mobile-menu{display:none;position:fixed;top:var(--head);left:0;right:0;z-index:59;background:#fff;border-bottom:1px solid var(--line);padding:10px 20px 18px;box-shadow:var(--shadow)}
+.mobile-menu.open{display:block}
+.mobile-menu a{display:block;padding:12px 4px;font-weight:700;border-bottom:1px solid var(--line)}
+.mobile-menu a:last-child{border-bottom:none}
+.hero{padding:calc(var(--head) + 44px) 0 56px;background:var(--bg2);border-bottom:1px solid var(--line)}
+.hero-in{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center}
+.hero-logo{width:92px;height:92px;margin-bottom:16px}
+.hero h1{font-size:clamp(34px,6vw,54px);font-weight:900;line-height:1.25}
+.hero h1 .hl{background:linear-gradient(transparent 60%, var(--lime) 60%)}
+.hero p.lead{color:var(--sub);margin:16px 0 20px;font-size:17px}
+.next-chip{display:inline-flex;align-items:center;gap:10px;background:#fff;border:2px solid var(--ink);border-radius:14px;padding:10px 16px;font-weight:700;box-shadow:4px 4px 0 var(--lime);margin-bottom:22px}
+.next-chip .tag{background:var(--ink);color:var(--lime);font-size:12px;font-weight:800;border-radius:6px;padding:2px 8px;letter-spacing:.08em}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.hero-photo{border-radius:20px;overflow:hidden;border:2px solid var(--ink);box-shadow:8px 8px 0 var(--lime)}
+.hero-photo img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/3}
+.about-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.about-card{border:1px solid var(--line);border-radius:16px;padding:22px;background:#fff}
+.about-card .en{font-family:"Archivo",sans-serif;font-size:12px;font-weight:800;color:var(--lime-d);letter-spacing:.2em}
+.about-card h3{font-size:20px;font-weight:900;margin:6px 0}
+.about-card p{color:var(--sub);font-size:15px}
+.rep{margin-top:18px;display:flex;gap:14px;align-items:flex-start;background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:18px 20px}
+.rep img{width:52px;height:52px;flex:none}
+.rep b{font-size:17px}
+.rep p{color:var(--sub);font-size:14.5px}
+.prog-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.prog-card{border:2px solid var(--ink);border-radius:20px;overflow:hidden;background:#fff;display:flex;flex-direction:column}
+.prog-card .ph{aspect-ratio:16/8;overflow:hidden}
+.prog-card .ph img{width:100%;height:100%;object-fit:cover}
+.prog-body{padding:22px}
+.prog-body .tag{display:inline-block;background:var(--lime);border:1.5px solid var(--ink);border-radius:999px;font-size:12.5px;font-weight:800;padding:2px 12px;margin-bottom:10px}
+.prog-body h3{font-size:23px;font-weight:900;margin-bottom:8px}
+.prog-body p{color:var(--sub);font-size:15px;margin-bottom:14px}
+.facts{border-top:1px dashed var(--line)}
+.facts div{display:flex;gap:12px;padding:7px 0;border-bottom:1px dashed var(--line);font-size:14.5px}
+.facts div:last-child{border-bottom:none}
+.facts dt{flex:none;width:64px;font-weight:700;color:var(--sub)}
+.facts dd{font-weight:500}
+.prog-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.event-list{display:grid;gap:16px}
+.event-card{border:2px solid var(--ink);border-radius:20px;padding:24px;background:#fff;box-shadow:6px 6px 0 var(--lime)}
+.event-card.done{box-shadow:none;border-color:var(--line);background:#fafafa}
+.event-top{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:8px}
+.event-top h3{font-size:22px;font-weight:900}
+.badge{font-size:12.5px;font-weight:800;border-radius:999px;padding:3px 12px;border:1.5px solid var(--ink)}
+.badge.open{background:var(--lime)}
+.badge.soon{background:#fff}
+.badge.done-b{background:#eee;color:#666;border-color:#ccc}
+.event-meta{color:var(--sub);font-size:15px;margin-bottom:12px}
+.rounds{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.round{border:1px solid var(--line);border-radius:12px;padding:10px 12px;background:#fff}
+.round .d{font-weight:900;font-size:16px}
+.round .t{color:var(--sub);font-size:13.5px}
+.round.past{opacity:.55}
+.flow{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:18px;background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:12px 16px;font-size:14.5px;font-weight:700}
+.flow .arr{color:var(--lime-d);font-weight:900}
+.flow small{font-weight:500;color:var(--sub)}
+.event-note{color:var(--sub);font-size:13.5px;margin-top:12px}
+.strip{display:flex;gap:12px;overflow-x:auto;padding:6px 2px 14px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.strip figure{flex:0 0 240px;scroll-snap-align:start;border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#000}
+.strip img,.strip video{width:100%;height:170px;object-fit:cover}
+.strip figcaption{background:#fff;font-size:13px;font-weight:700;padding:8px 12px;border-top:1px solid var(--line)}
+.faq-list{max-width:820px}
+details.faq{border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin-bottom:10px;background:#fff}
+details.faq summary{font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:12px}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::after{content:"＋";color:var(--lime-d);font-weight:900}
+details.faq[open ] summary::after{content:"−"}
+details.faq p{color:var(--sub);margin-top:8px;font-size:15px}
+.contact{background:var(--navy);color:#fff}
+.contact .sec-label{color:var(--lime)}
+.contact .sec-title{color:#fff}
+.contact p{color:#cfe0ea;max-width:560px}
+.contact-btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+.contact .btn{border-color:#fff}
+footer.site{background:#0a0f0c;color:#9aa39c;padding:36px 0;font-size:13.5px}
+.foot-in{display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap}
+.foot-in img{width:46px;height:46px}
+.foot-in b{color:#fff;font-size:16px}
+.foot-links{margin-left:auto;display:flex;gap:18px;flex-wrap:wrap}
+.foot-links a:hover{color:#fff}
+.privacy{margin-top:16px;border-top:1px solid #26302a;padding-top:14px;line-height:1.7}
+@media (max-width:900px){
+  nav.main,.head-cta{display:none}
+  .burger{display:flex}
+  .hero-in{grid-template-columns:1fr}
+  .about-grid,.prog-grid{grid-template-columns:1fr}
+  .rounds{grid-template-columns:repeat(2,1fr)}
+  section{padding:48px 0}
 }
 @media (prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
-  .reveal{opacity:1;transform:none}
-  .sec-title{background-size:100% 12px}
+  html{scroll-behavior:auto}
+  .reveal{opacity:1;transform:none;transition:none}
 }
 </style>
 </head>
 <body>
-<a class="skip" href="#main">本文へスキップ</a>
-
-<!-- ============================================================
-  運営用設定：URLや連絡先はここだけ変えればサイト全体に反映されます
-============================================================= -->
-<script>
-const SITE = {
-  instagram: "https://www.instagram.com/sports_link0921/",
-  instagramHandle: "@sports_link0921",
-  nekonote: "https://nekono-te-web.netlify.app/",
-  coachSearch: "https://sports-link-syunta.netlify.app/",            // 既存のコーチ検索・予約サイト
-  coachEntry: "https://sports-link-syunta.netlify.app/community-coach-entry.html", // 地域クラブ指導者 事前登録
-  // イベント：status は "open"(受付中) / "soon"(募集前) / "closed"(受付終了) / "info"(開催中・案内)
-  // applyUrl が空なら申込ボタンはInstagram案内になります（架空の申込先は作りません）
-  events: [
-    {
-      title: "アジリティスクール 第1期（全4回）",
-      target: "小学生・中学生",
-      place: "戸田市内の小学校体育館（会場は申込確定者にメールでご案内）",
-      time: "土曜 16:30〜18:00（受付15:45）",
-      price: "1回 1,500円／全4回 5,000円",
-      status: "info",
-      statusLabel: "開催中",
-      applyUrl: "",
-      sessions: [
-        {date:"2026-11-07", theme:"基本動作・一歩目"},
-        {date:"2026-11-14", theme:"ターン・方向転換"},
-        {date:"2026-11-21", theme:"リアクション・身体操作"},
-        {date:"2026-11-28", theme:"瞬発力・総合"}
-      ]
-    },
-    {
-      title: "アジリティスクール 第2期（全4回）",
-      target: "小学生・中学生",
-      place: "戸田市内の体育館（会場は申込確定者にメールでご案内）",
-      time: "土曜 16:30〜18:00（受付15:45）",
-      price: "1回 1,500円／全4回 5,000円",
-      status: "soon",
-      statusLabel: "12月開催・近日募集開始",
-      applyUrl: "",
-      sessions: [
-        {date:"2026-12-05", theme:"基本動作・一歩目"},
-        {date:"2026-12-12", theme:"ターン・方向転換"},
-        {date:"2026-12-19", theme:"リアクション・身体操作"},
-        {date:"2026-12-26", theme:"瞬発力・総合"}
-      ]
-    }
-  ]
-};
-</script>
-
-<header class="hd" id="top-header">
-  <div class="wrap">
-    <a href="#top" class="logo" aria-label="SPORTS LINK トップへ">
-      <svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="10" fill="#111"/><circle cx="15" cy="20" r="6.5" fill="none" stroke="#B6F09C" stroke-width="4"/><circle cx="25" cy="20" r="6.5" fill="none" stroke="#B6F09C" stroke-width="4"/></svg>
-      <b>SPORTS LINK</b>
-    </a>
-    <button class="menu-btn" aria-label="メニューを開く" aria-expanded="false" aria-controls="gnav"><span></span><span></span><span></span></button>
-    <nav class="nav" id="gnav" aria-label="グローバルナビゲーション">
-      <a class="txt" href="#about">ABOUT</a>
-      <a class="txt" href="#program">PROGRAM</a>
-      <a class="txt" href="#event">EVENT</a>
-      <a class="txt" href="#safety">SAFETY</a>
-      <a class="txt" href="#contact">CONTACT</a>
-      <a class="btn btn-lime btn-sm" href="#event">イベントに参加する <span class="arr" aria-hidden="true">→</span></a>
+<header class="site">
+  <div class="head-in">
+    <a class="logo" href="#top"><img src="logo.png" alt="SPORTS LINK ロゴ">SPORTS<span class="x">×</span>LINK</a>
+    <nav class="main">
+      <a href="#about">SPORTS LINKとは</a>
+      <a href="#program">活動内容</a>
+      <a href="#event">開催情報</a>
+      <a href="#faq">よくある質問</a>
     </nav>
+    <a class="btn lime small head-cta" href="#contact">問い合わせ</a>
+    <button class="burger" id="burger" aria-label="メニューを開く" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about">SPORTS LINKとは</a>
+  <a href="#program">活動内容</a>
+  <a href="#event">開催情報</a>
+  <a href="#activity">活動の様子</a>
+  <a href="#faq">よくある質問</a>
+  <a href="#contact">問い合わせ</a>
+</div>
 
-<main id="main">
-<!-- 02 FIRST VIEW -->
-<section class="hero" id="top" aria-labelledby="hero-title">
-  <div class="hero-bg" aria-hidden="true">
-    <div class="grid"></div>
-    <div class="orbit o1"></div>
-    <div class="orbit o2"></div>
-    <svg class="trail" viewBox="0 0 600 800" preserveAspectRatio="none"><path d="M40 760 C 200 600, 120 420, 330 360 S 560 160, 600 40" fill="none" stroke="#111" stroke-opacity=".18" stroke-width="2"/></svg>
-  </div>
-  <div class="wrap">
-    <div>
-      <p class="eyebrow fade-in">TODA, SAITAMA — SPORTS × LINK</p>
-      <h1 id="hero-title" class="fade-in d2">スポーツで、<br><span style="white-space:nowrap"><span class="hl">人と人</span>をつなぐ。</span></h1>
-      <p class="sub fade-in d3">挑戦できる場所と、成長できるきっかけを地域に。</p>
-      <div class="ctas fade-in d3">
-        <a class="btn btn-ghost" href="#program">活動を見る <span class="arr" aria-hidden="true">→</span></a>
-        <a class="btn btn-lime" href="#event">イベントに参加する <span class="arr" aria-hidden="true">→</span></a>
+<main id="top">
+  <div class="hero">
+    <div class="wrap hero-in">
+      <div>
+        <img class="hero-logo" src="logo.png" alt="SPORTS×LINK ロゴ">
+        <h1>スポーツで、<br><span class="hl">人と人をつなぐ。</span></h1>
+        <p class="lead">埼玉県戸田市を拠点に、スポーツをする人・教える人・地域の団体が出会い、挑戦できる場所をつくっています。</p>
+        <div class="next-chip"><span class="tag">次回開催</span><span id="nextSession">アジリティスクール 第3回｜11/21（土）16:30〜18:00</span></div>
+        <div class="hero-btns">
+          <a class="btn primary" href="#event">開催情報を見る</a>
+          <a class="btn" href="https://www.instagram.com/sports_link0921/" target="_blank" rel="noopener">Instagram</a>
+        </div>
       </div>
-      <a class="ig-mini js-ig ext" target="_blank" rel="noopener noreferrer" href="#">Instagram <span class="js-ig-handle"></span></a>
-    </div>
-    <div class="hero-art fade-in d2" aria-hidden="true">
-      <div class="disc"></div>
-      <img class="photo" src="hero.jpg" alt="アジリティスクールの練習風景（体育館でコーンを使ったドリル）">
-      <p class="hero-tag"><span>AGILITY SCHOOL</span>戸田市で第1期 開催中</p>
+      <div class="hero-photo"><img src="hero.jpg" alt="アジリティスクールの練習風景"></div>
     </div>
   </div>
-</section>
 
-<!-- 03 INTRO -->
-<section class="bg-base" id="about" aria-labelledby="about-title">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <p class="sec-label"><span class="no">01</span>ABOUT</p>
-      <h2 class="sec-title" id="about-title">SPORTS LINKが目指すこと</h2>
-      <p class="sec-lead">SPORTS LINKは、スポーツを通じて人・チーム・地域をつなぎ、一人ひとりが挑戦できる機会をつくります。埼玉県戸田市を中心に、スポーツをする人・教える人・地域の団体が出会える場を育てています。</p>
+  <section id="about">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="sec-label">ABOUT</div>
+        <h2 class="sec-title">挑戦できる場所を、<span class="hl">地域に。</span></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-card reveal"><div class="en">MEET</div><h3>出会う</h3><p>スポーツをする人、教える人、地域のチームが出会うきっかけをつくります。</p></div>
+        <div class="about-card reveal"><div class="en">CHALLENGE</div><h3>挑戦する</h3><p>年齢や経験に合わせて、無理なく「できた」を積み重ねられる場を用意します。</p></div>
+        <div class="about-card reveal"><div class="en">GROW</div><h3>成長する</h3><p>身体を動かす楽しさから、動きを学ぶ面白さへ。続けられる環境を地域に。</p></div>
+      </div>
+      <div class="rep reveal">
+        <img src="logo.png" alt="">
+        <div>
+          <b>代表　安倍隼汰</b>
+          <p>東京国際大学 人間スポーツ学科 在学。2025年にクーバー・コーチングでサッカーコーチ（幼稚園〜小学6年）を務め、現在は戸田市のU15バレーボールクラブ「排球会」のトレーナーも兼任しています。</p>
+        </div>
+      </div>
     </div>
-    <div class="keys">
-      <article class="key reveal">
-        <svg viewBox="0 0 52 52" aria-hidden="true"><circle cx="18" cy="26" r="11" fill="none" stroke="#111" stroke-width="4"/><circle cx="34" cy="26" r="11" fill="#B6F09C" stroke="#111" stroke-width="4"/></svg>
-        <p class="k-en">MEET</p><h3>出会う</h3>
-        <p>スポーツをする人、教える人、地域のチームが出会うきっかけをつくります。</p>
-      </article>
-      <article class="key reveal">
-        <svg viewBox="0 0 52 52" aria-hidden="true"><path d="M6 40 L20 26 L28 32 L46 12" fill="none" stroke="#111" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="46" cy="12" r="5" fill="#B6F09C" stroke="#111" stroke-width="3"/></svg>
-        <p class="k-en">CHALLENGE</p><h3>挑戦する</h3>
-        <p>年齢や経験に合わせて、無理なく「できた」を積み重ねられる場を用意します。</p>
-      </article>
-      <article class="key reveal">
-        <svg viewBox="0 0 52 52" aria-hidden="true"><rect x="8" y="30" width="8" height="14" rx="2" fill="#111"/><rect x="22" y="20" width="8" height="24" rx="2" fill="#111"/><rect x="36" y="8" width="8" height="36" rx="2" fill="#B6F09C" stroke="#111" stroke-width="3"/></svg>
-        <p class="k-en">GROW</p><h3>成長する</h3>
-        <p>身体を動かす楽しさから、動きを学ぶ面白さへ。続けられる環境を地域に。</p>
-      </article>
-    </div>
-    <article class="key reveal" style="margin-top:20px">
-      <p class="k-en">REPRESENTATIVE</p>
-      <h3 style="font-size:22px;margin:6px 0 8px">代表 安倍隼汰</h3>
-      <p>東京国際大学 人間社会学部 人間スポーツ学科 在学。2025年にはクーバー・コーチングでサッカーコーチ（幼稚園〜小学6年対象）を務め、現在は戸田市のU15バレーボールクラブ「排球会」のトレーナーも兼任しています。「スポーツで人と人をつなぐ」を掲げ、地域で挑戦できる場所づくりに取り組んでいます。</p>
-    </article>
-  </div>
-</section>
+  </section>
 
-<!-- 04 PROGRAM -->
-<section id="program" aria-labelledby="program-title">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <p class="sec-label"><span class="no">02</span>PROGRAM</p>
-      <h2 class="sec-title" id="program-title">活動内容</h2>
-      <p class="sec-lead">身体を動かす楽しさから、動きを学ぶ面白さまで。年齢や経験に合わせたスポーツの機会を届けます。</p>
+  <section id="program" style="background:var(--bg2);border-block:1px solid var(--line)">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="sec-label">PROGRAM</div>
+        <h2 class="sec-title">活動内容</h2>
+      </div>
+      <div class="prog-grid">
+        <article class="prog-card reveal">
+          <div class="ph"><img src="gym2.jpg" alt="アジリティスクールの様子"></div>
+          <div class="prog-body">
+            <span class="tag">小学生・中学生</span>
+            <h3>アジリティスクール</h3>
+            <p>一歩目の速さ、方向転換、反応、身体の使い方を、競技を問わず役立つ形で練習します。</p>
+            <dl class="facts">
+              <div><dt>日時</dt><dd>土曜 16:30〜18:00</dd></div>
+              <div><dt>料金</dt><dd>1回 1,500円／全4回 5,000円</dd></div>
+              <div><dt>持ち物</dt><dd>室内シューズ・飲み物・タオル</dd></div>
+              <div><dt>定員</dt><dd>1回 50名（先着順）</dd></div>
+            </dl>
+          </div>
+        </article>
+        <article class="prog-card reveal">
+          <div class="prog-body">
+            <span class="tag">チーム・団体向け</span>
+            <h3>出張トレーニング</h3>
+            <p>小・中学生のチームへ伺い、競技を問わず動きづくりのトレーニングを行います。</p>
+            <dl class="facts">
+              <div><dt>人数</dt><dd>10名から／60〜90分</dd></div>
+              <div><dt>料金</dt><dd>1人 1,000円</dd></div>
+              <div><dt>地域</dt><dd>戸田市・蕨市・川口市・さいたま市南区ほか（要相談）</dd></div>
+              <div><dt>申込</dt><dd>希望日の1週間前までにInstagramから</dd></div>
+            </dl>
+          </div>
+        </article>
+      </div>
+      <div class="prog-links reveal">
+        <a class="btn small" href="https://sports-link-syunta.netlify.app/" target="_blank" rel="noopener">個人レッスンのコーチを探す</a>
+        <a class="btn small" href="https://sports-link-syunta.netlify.app/coaches" target="_blank" rel="noopener">指導者・協力者を募集しています</a>
+      </div>
     </div>
-    <div class="progs">
-      <article class="prog reveal">
-        <div class="prog-pic"><img src="gym2.jpg" alt="アジリティスクールの練習風景" loading="lazy"></div>
-        <span class="tag">小学生・中学生</span>
-        <h3>アジリティスクール</h3>
-        <p>一歩目の速さ、方向転換、反応、身体の使い方を、競技を問わず役立つ形で練習します。</p>
-        <dl class="facts">
-          <div><dt>場所</dt><dd>戸田市内の小学校体育館</dd></div>
-          <div><dt>日時</dt><dd>土曜 16:30〜18:00</dd></div>
-          <div><dt>料金</dt><dd>1回 1,500円／全4回 5,000円</dd></div>
-          <div><dt>持ち物</dt><dd>室内シューズ・飲み物・タオル</dd></div>
-          <div><dt>定員</dt><dd>1回 50名（先着順）</dd></div>
-        </dl>
-        <a class="btn btn-ghost btn-sm more" href="#event">開催情報を見る <span class="arr" aria-hidden="true">→</span></a>
-      </article>
+  </section>
 
-      <article class="prog reveal">
-        <div class="prog-pic" aria-hidden="true"><svg viewBox="0 0 110 110"><rect x="16" y="22" width="78" height="62" rx="8" fill="none" stroke="#111" stroke-width="5"/><path d="M16 40 H94" stroke="#111" stroke-width="5"/><circle cx="38" cy="62" r="7" fill="#111"/><circle cx="55" cy="62" r="7" fill="#B6F09C" stroke="#111" stroke-width="3"/><circle cx="72" cy="62" r="7" fill="#111"/><path d="M34 14 V28 M76 14 V28" stroke="#111" stroke-width="5" stroke-linecap="round"/></svg></div>
-        <span class="tag">チーム・団体向け</span>
-        <h3>出張トレーニング</h3>
-        <p>小・中学生のチームへ伺い、競技を問わず動きづくりのトレーニングを行います。</p>
-        <dl class="facts">
-          <div><dt>人数</dt><dd>10名から／60〜90分</dd></div>
-          <div><dt>料金</dt><dd>1人 1,000円</dd></div>
-          <div><dt>地域</dt><dd>戸田市・蕨市・川口市・さいたま市南区ほか（要相談）</dd></div>
-          <div><dt>相談</dt><dd>希望日の1週間前までにInstagramから</dd></div>
-        </dl>
-        <a class="btn btn-ghost btn-sm more js-ig ext" target="_blank" rel="noopener noreferrer" href="#">Instagramで相談する</a>
-      </article>
+  <section id="event">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="sec-label">EVENT</div>
+        <h2 class="sec-title">開催情報</h2>
+      </div>
+      <div class="event-list" id="eventList"></div>
+      <div class="flow reveal">
+        <span>15:45 受付</span><span class="arr">→</span>
+        <span>16:30 練習開始</span><span class="arr">→</span>
+        <span>17:40 ゲーム形式</span><span class="arr">→</span>
+        <span>18:00 解散</span>
+        <small>参加費は当日、受付で現金にてお支払いください</small>
+      </div>
+      <p class="event-note">※ 会場名は防犯のため公開しておらず、申込が確定した方にのみメールでご案内しています。申込はInstagramプロフィールのフォームから。</p>
+    </div>
+  </section>
 
-      <article class="prog reveal">
-        <div class="prog-pic" aria-hidden="true"><svg viewBox="0 0 110 110"><circle cx="48" cy="48" r="24" fill="none" stroke="#111" stroke-width="6"/><path d="M66 66 L90 90" stroke="#111" stroke-width="8" stroke-linecap="round"/><circle cx="48" cy="42" r="7" fill="#B6F09C" stroke="#111" stroke-width="3"/><path d="M36 60 C40 52, 56 52, 60 60" stroke="#111" stroke-width="4" fill="none" stroke-linecap="round"/></svg></div>
-        <span class="tag">個人レッスン</span>
-        <h3>コーチを探す</h3>
-        <p>競技や地域から、個人レッスンをしてくれるコーチを探せるサービスを運営しています。</p>
-        <a class="btn btn-ghost btn-sm more ext" target="_blank" rel="noopener noreferrer" id="coach-search-link" href="#">コーチ検索サイトへ</a>
-      </article>
+  <section id="activity" style="background:var(--bg2);border-block:1px solid var(--line)">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="sec-label">ACTIVITY</div>
+        <h2 class="sec-title">活動の様子</h2>
+        <p class="sec-lead">アジリティスクール第1期（2026年11月）の練習風景です。横にスワイプできます。</p>
+      </div>
+      <div class="strip reveal">
+        <figure><video src="drill.mp4" poster="gym3.jpg" controls playsinline preload="none"></video><figcaption>グループドリル</figcaption></figure>
+        <figure><img src="gym3.jpg" alt="ウォームアップの様子" loading="lazy"><figcaption>ウォームアップ</figcaption></figure>
+        <figure><video src="drill2.mp4" poster="hero.jpg" controls playsinline preload="none"></video><figcaption>ステップ練習</figcaption></figure>
+        <figure><video src="v3.mp4" poster="thumb_v3.jpg" controls playsinline preload="none"></video><figcaption>練習の様子</figcaption></figure>
+        <figure><video src="v4.mp4" poster="thumb_v4.jpg" controls playsinline preload="none"></video><figcaption>練習の様子</figcaption></figure>
+        <figure><video src="v5.mp4" poster="thumb_v5.jpg" controls playsinline preload="none"></video><figcaption>練習の様子</figcaption></figure>
+        <figure><video src="v6.mp4" poster="thumb_v6.jpg" controls playsinline preload="none"></video><figcaption>練習の様子</figcaption></figure>
+        <figure><video src="v7.mp4" poster="thumb_v7.jpg" controls playsinline preload="none"></video><figcaption>練習の様子</figcaption></figure>
+        <figure><video src="v8.mp4" poster="thumb_v8.jpg" controls playsinline preload="none"></video><figcaption>練習の様子</figcaption></figure>
+        <figure><video src="v9.mp4" poster="thumb_v9.jpg" controls playsinline preload="none"></video><figcaption>練習の様子</figcaption></figure>
+        <figure><video src="v10.mp4" poster="thumb_v10.jpg" controls playsinline preload="none"></video><figcaption>練習の様子</figcaption></figure>
+      </div>
+    </div>
+  </section>
 
-      <article class="prog reveal">
-        <div class="prog-pic" aria-hidden="true"><svg viewBox="0 0 110 110"><circle cx="30" cy="40" r="10" fill="#111"/><circle cx="80" cy="40" r="10" fill="#111"/><circle cx="55" cy="30" r="10" fill="#B6F09C" stroke="#111" stroke-width="3"/><path d="M14 82 C16 62, 44 62, 46 82 M64 82 C66 62, 94 62, 96 82 M38 74 C40 52, 70 52, 72 74" stroke="#111" stroke-width="6" fill="none" stroke-linecap="round"/></svg></div>
-        <span class="tag">指導者・協力者</span>
-        <h3>地域クラブの指導者募集</h3>
-        <p>中学生が、地域でスポーツを続けられるように。地域クラブを支える主担当コーチ・練習サポートの候補者を募集しています。18歳以上。戸田周辺のバレーから準備中で、全国・他競技からも事前登録できます。</p>
-        <a class="btn btn-ghost btn-sm more ext" target="_blank" rel="noopener noreferrer" id="coach-entry-link" href="#">事前登録する</a>
-      </article>
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="sec-label">FAQ</div>
+        <h2 class="sec-title">よくある質問</h2>
+      </div>
+      <div class="faq-list reveal">
+        <details class="faq"><summary>申し込み方法は？</summary><p>Instagramプロフィールの申込フォームからお申し込みください。定員は1回50名（先着順）です。申込が確定した方に、会場をご案内するメールをお送りします。</p></details>
+        <details class="faq"><summary>持ち物や服装は？</summary><p>室内シューズ（上履き）、飲み物、タオルをご用意ください。服装は運動できるものであれば自由です。</p></details>
+        <details class="faq"><summary>参加費の支払い方法は？</summary><p>当日、受付で現金にてお支払いください。全4回コース（5,000円）は初回にまとめてのお支払いも可能です。</p></details>
+        <details class="faq"><summary>会場はどこですか？</summary><p>戸田市内の小学校体育館です。会場名は防犯のため公開しておらず、申込が確定した方にのみメールでご案内しています。</p></details>
+        <details class="faq"><summary>写真は掲載されますか？</summary><p>活動の様子を発信することがありますが、保護者の方の同意なく、お子さまの顔や氏名が分かる写真は掲載しません。後ろ姿や足元など、個人が特定されない形で紹介します。</p></details>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- 05 FEATURE -->
-<section class="bg-dark" aria-labelledby="feature-title">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <p class="sec-label" style="color:var(--lime)"><span class="no" style="background:var(--lime);color:var(--ink)">03</span>FEATURE</p>
-      <h2 class="sec-title" id="feature-title" style="color:#fff">SPORTS LINKの特徴</h2>
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <div class="sec-label">CONTACT</div>
+      <h2 class="sec-title">次の一歩を、ここから。</h2>
+      <p>参加の申し込み、見学、出張トレーニングの相談は、InstagramのDMで受け付けています。</p>
+      <div class="contact-btns">
+        <a class="btn lime" href="https://www.instagram.com/sports_link0921/" target="_blank" rel="noopener">Instagramで問い合わせる</a>
+        <a class="btn" href="#event">開催情報を見る</a>
+      </div>
     </div>
-    <div class="feats">
-      <article class="feat reveal"><p class="num en">01</p><h3>専門的な動きを、<br>わかりやすく</h3><p>一歩目、ターン、反応など、どの競技にもつながる動きをテーマごとに分けて練習します。</p></article>
-      <article class="feat reveal"><p class="num en">02</p><h3>地域で<br>参加しやすい機会</h3><p>戸田市周辺の体育館で、土曜の夕方に開催。単発参加もしやすい料金設定にしています。</p></article>
-      <article class="feat reveal"><p class="num en">03</p><h3>安全と、<br>一人ひとりの成長を大切に</h3><p>一人ひとりの状態を大切にし、無理のない参加と安心できる環境づくりを心がけます。</p></article>
-    </div>
-  </div>
-</section>
-
-<!-- 06 EVENT -->
-<section class="bg-base" id="event" aria-labelledby="event-title">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <p class="sec-label"><span class="no">04</span>EVENT</p>
-      <h2 class="sec-title" id="event-title">参加できるイベント</h2>
-      <p class="sec-lead">開催予定と受付状況です。最新の情報はInstagramでもお知らせしています。</p>
-    </div>
-    <div class="events" id="event-list"></div>
-    <p class="note">※ 会場名は、申込が確定した方にのみメールでご案内しています。<br>※ 次回以降の開催は決まり次第お知らせします。</p>
-    <div class="flow reveal" aria-label="当日の流れ">
-      <div><b>15:45</b><h4>受付・集合</h4><p>体育館前で受付。参加費は当日、受付でお支払いください。</p></div>
-      <div><b>16:30</b><h4>ウォームアップ</h4><p>ケガ予防の準備運動と、身体を目覚めさせる動きづくり。</p></div>
-      <div><b>16:45</b><h4>テーマトレーニング</h4><p>その日のテーマ（一歩目・ターン・反応など）を練習します。</p></div>
-      <div><b>17:40</b><h4>ゲーム形式・振り返り</h4><p>学んだ動きをゲームで実践し、振り返って18:00解散。</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- 07 ACTIVITY -->
-<section id="activity" aria-labelledby="activity-title">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <p class="sec-label"><span class="no">05</span>ACTIVITY</p>
-      <h2 class="sec-title" id="activity-title">活動レポート</h2>
-      <p class="sec-lead">アジリティスクール第1期（2026年11月）の各回のテーマです。開催報告は順次追加します。</p>
-    </div>
-    <div class="acts">
-      <article class="act reveal"><svg viewBox="0 0 44 44" aria-hidden="true"><path d="M8 36 L22 8 L36 36" fill="none" stroke="#111" stroke-width="4" stroke-linejoin="round"/><circle cx="22" cy="8" r="5" fill="#B6F09C" stroke="#111" stroke-width="2"/></svg><p class="r en">ROUND 01・11/7</p><h3>基本動作・一歩目</h3><p>構えと最初の一歩を練習。</p></article>
-      <article class="act reveal"><svg viewBox="0 0 44 44" aria-hidden="true"><path d="M8 34 H28 A8 8 0 0 0 28 18 H14" fill="none" stroke="#111" stroke-width="4" stroke-linecap="round"/><path d="M18 12 L12 18 L18 24" fill="none" stroke="#111" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><circle cx="36" cy="10" r="5" fill="#B6F09C" stroke="#111" stroke-width="2"/></svg><p class="r en">ROUND 02・11/14</p><h3>ターン・方向転換</h3><p>止まる・切り返す動きを練習。</p></article>
-      <article class="act reveal"><svg viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="14" fill="none" stroke="#111" stroke-width="4"/><path d="M22 4 V10 M22 34 V40 M4 22 H10 M34 22 H40" stroke="#111" stroke-width="4" stroke-linecap="round"/><circle cx="22" cy="22" r="5" fill="#B6F09C" stroke="#111" stroke-width="2"/></svg><p class="r en">ROUND 03・11/21</p><h3>リアクション・身体操作</h3><p>合図への反応と身体の使い方。</p></article>
-      <article class="act reveal"><svg viewBox="0 0 44 44" aria-hidden="true"><path d="M24 4 L10 26 H22 L18 40 L34 16 H22 Z" fill="#B6F09C" stroke="#111" stroke-width="3" stroke-linejoin="round"/></svg><p class="r en">ROUND 04・11/28</p><h3>瞬発力・総合</h3><p>これまでの動きをつなげて総まとめ。</p></article>
-    </div>
-    <div class="media-grid reveal">
-      <figure class="media-main"><video src="drill.mp4" autoplay muted loop playsinline preload="metadata"></video><figcaption>第1期の練習の様子（反応・方向転換のドリル）</figcaption></figure>
-      <figure><img src="gym3.jpg" alt="ウォームアップでストレッチをする参加者" loading="lazy"><figcaption>ウォームアップの様子</figcaption></figure>
-      <figure><video src="drill2.mp4" autoplay muted loop playsinline preload="metadata"></video><figcaption>練習の様子</figcaption></figure>
-    </div>
-    <div class="video-grid reveal" aria-label="練習動画ギャラリー">
-      <figure><video src="v3.mp4" poster="thumb_v3.jpg" controls preload="none" playsinline></video><figcaption>練習の様子</figcaption></figure>
-      <figure><video src="v4.mp4" poster="thumb_v4.jpg" controls preload="none" playsinline></video><figcaption>練習の様子</figcaption></figure>
-      <figure><video src="v5.mp4" poster="thumb_v5.jpg" controls preload="none" playsinline></video><figcaption>練習の様子</figcaption></figure>
-      <figure><video src="v6.mp4" poster="thumb_v6.jpg" controls preload="none" playsinline></video><figcaption>練習の様子</figcaption></figure>
-      <figure><video src="v7.mp4" poster="thumb_v7.jpg" controls preload="none" playsinline></video><figcaption>練習の様子</figcaption></figure>
-      <figure><video src="v8.mp4" poster="thumb_v8.jpg" controls preload="none" playsinline></video><figcaption>練習の様子</figcaption></figure>
-      <figure><video src="v9.mp4" poster="thumb_v9.jpg" controls preload="none" playsinline></video><figcaption>練習の様子</figcaption></figure>
-      <figure><video src="v10.mp4" poster="thumb_v10.jpg" controls preload="none" playsinline></video><figcaption>練習の様子</figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<!-- 08 INSTAGRAM -->
-<section class="bg-base" id="news" aria-labelledby="ig-title">
-  <div class="wrap ig">
-    <div class="reveal">
-      <p class="sec-label"><span class="no">06</span>INSTAGRAM</p>
-      <h2 class="sec-title" id="ig-title">日々の活動は<br>Instagramで発信中</h2>
-      <p class="sec-lead">開催のお知らせ、募集情報、スポーツの「なぜ？」を解説する投稿を毎日更新しています。</p>
-      <p style="margin-top:28px"><a class="btn btn-lime js-ig ext" target="_blank" rel="noopener noreferrer" href="#">Instagramをフォロー</a></p>
-    </div>
-    <!-- 手動更新カード：最新投稿のテーマに合わせて書き換えてください -->
-    <div class="ig-tiles reveal" aria-label="Instagramの投稿テーマ">
-      <a class="ig-tile js-ig" target="_blank" rel="noopener noreferrer" href="#"><small><span>01</span><span>SPORTS LINK</span></small><b>速く走る<br>カギは<br><em>一歩目</em></b></a>
-      <a class="ig-tile dk js-ig" target="_blank" rel="noopener noreferrer" href="#"><small><span>02</span><span>SPORTS LINK</span></small><b>練習しているのに<br><em>なぜ？</em></b></a>
-      <a class="ig-tile lm js-ig" target="_blank" rel="noopener noreferrer" href="#"><small><span>03</span><span>SPORTS LINK</span></small><b>指導者<br>募集中</b></a>
-      <a class="ig-tile lm js-ig" target="_blank" rel="noopener noreferrer" href="#"><small><span>04</span><span>SPORTS LINK</span></small><b>アジリティ<br>スクール</b></a>
-      <a class="ig-tile js-ig" target="_blank" rel="noopener noreferrer" href="#"><small><span>05</span><span>SPORTS LINK</span></small><b>地域で<br><em>続ける</em></b></a>
-      <a class="ig-tile dk js-ig" target="_blank" rel="noopener noreferrer" href="#"><small><span>06</span><span>SPORTS LINK</span></small><b>出張<br><em>トレーニング</em></b></a>
-    </div>
-  </div>
-</section>
-
-<!-- 09 SAFETY -->
-<section id="safety" aria-labelledby="safety-title">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <p class="sec-label"><span class="no">07</span>SAFETY</p>
-      <h2 class="sec-title" id="safety-title">安心して参加するために</h2>
-      <p class="sec-lead">保護者の方からよくいただく質問をまとめました。わからないことはお気軽にお問い合わせください。</p>
-    </div>
-    <div class="faq reveal">
-      <details><summary>対象年齢は？</summary><p class="a">アジリティスクールは小学生・中学生が対象です。出張トレーニングは小・中学生のチームが対象で、競技は問いません。</p></details>
-      <details><summary>持ち物や服装は？</summary><p class="a">室内シューズ（上履き）、飲み物、タオルをご用意ください。服装は運動できるものであれば自由です。</p></details>
-      <details><summary>申し込み方法は？</summary><p class="a">Instagramプロフィールの申込フォームからお申し込みください。定員は1回50名（先着順）です。申込が確定した方に、会場をご案内するメールをお送りします。</p></details>
-      <details><summary>参加費の支払い方法は？</summary><p class="a">当日、受付で現金にてお支払いください。全4回コース（5,000円）は初回にまとめてのお支払いも可能です。</p></details>
-      <details><summary>雨天の場合は？</summary><p class="a">体育館での開催のため、雨天でも実施します。</p></details>
-      <details><summary>会場はどこですか？</summary><p class="a">戸田市内の小学校体育館です。会場名は防犯のため公開しておらず、申込が確定した方にのみメールでご案内しています。</p></details>
-      <details><summary>体調がすぐれないときは？</summary><p class="a">無理をせずお休みください。ご連絡はInstagramのDMで受け付けています。</p></details>
-      <details><summary>見学や付き添いはできますか？</summary><p class="a">事前にInstagramのDMでご相談ください。</p></details>
-      <details><summary>写真は掲載されますか？</summary><p class="a">活動の様子を発信することがありますが、保護者の方の同意なく、お子さまの顔や氏名が分かる写真は掲載しません。後ろ姿や足元など、個人が特定されない形で紹介します。</p></details>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="bg-base" id="contact" aria-labelledby="contact-title">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <p class="sec-label"><span class="no">08</span>CONTACT</p>
-      <h2 class="sec-title" id="contact-title">お問い合わせ</h2>
-      <p class="sec-lead">ご用件を選んでください。現在、お問い合わせはInstagramのDMで受け付けています。</p>
-    </div>
-    <div class="contacts">
-      <a class="ct reveal" href="#event"><span class="who">保護者・参加者の方</span><h3>イベントに参加したい</h3><p>開催日程と受付状況を確認できます。</p><span class="go">イベントを見る →</span></a>
-      <a class="ct reveal js-ig" target="_blank" rel="noopener noreferrer" href="#"><span class="who">チーム・学校の方</span><h3>出張トレーニングの相談</h3><p>希望日の1週間前までにご連絡ください。</p><span class="go ext">InstagramでDM</span></a>
-      <a class="ct reveal" id="coach-entry-link2" target="_blank" rel="noopener noreferrer" href="#"><span class="who">指導者・協力者の方</span><h3>地域クラブの指導者に登録</h3><p>18歳以上・指導未経験の練習サポートも可。</p><span class="go ext">事前登録フォーム</span></a>
-      <a class="ct reveal js-ig" target="_blank" rel="noopener noreferrer" href="#"><span class="who">その他</span><h3>その他のお問い合わせ</h3><p>取材・協力のご相談など。</p><span class="go ext">InstagramでDM</span></a>
-    </div>
-  </div>
-</section>
-
-<!-- 10 CTA -->
-<section class="final" aria-labelledby="final-title">
-  <span class="ring" style="width:420px;height:420px;left:-140px;top:-120px" aria-hidden="true"></span>
-  <span class="ring" style="width:300px;height:300px;right:-80px;bottom:-120px" aria-hidden="true"></span>
-  <div class="wrap reveal">
-    <h2 id="final-title">次の一歩を、<br><span>ここから。</span></h2>
-    <div class="ctas">
-      <a class="btn btn-lime" href="#event">イベントに参加する <span class="arr" aria-hidden="true">→</span></a>
-      <a class="btn btn-ghost" href="#contact">活動について相談する <span class="arr" aria-hidden="true">→</span></a>
-    </div>
-  </div>
-</section>
+  </section>
 </main>
 
-<!-- 11 FOOTER -->
-<footer class="ft">
+<footer class="site">
   <div class="wrap">
-    <div class="ft-grid">
+    <div class="foot-in">
+      <img src="logo.png" alt="">
       <div>
-        <a href="#top" class="logo"><svg class="logo-mark" viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="10" fill="#111"/><circle cx="15" cy="20" r="6.5" fill="none" stroke="#B6F09C" stroke-width="4"/><circle cx="25" cy="20" r="6.5" fill="none" stroke="#B6F09C" stroke-width="4"/></svg><b>SPORTS LINK</b></a>
-        <p style="margin-top:14px">スポーツで、人と人をつなぐ。<br>埼玉県戸田市を中心に活動しています。</p>
-        <a class="neko ext" id="neko-link" target="_blank" rel="noopener noreferrer" href="#">
-          <svg viewBox="0 0 26 26" aria-hidden="true"><ellipse cx="13" cy="17" rx="7" ry="6" fill="#B6F09C"/><circle cx="6" cy="9" r="2.6" fill="#B6F09C"/><circle cx="11" cy="6" r="2.6" fill="#B6F09C"/><circle cx="16" cy="6" r="2.6" fill="#B6F09C"/><circle cx="21" cy="9" r="2.6" fill="#B6F09C"/></svg>
-          <span><small>Web制作・運営サポート</small>ねこの手ウェブ制作</span>
-        </a>
+        <b>SPORTS×LINK</b><br>
+        スポーツで、人と人をつなぐ。｜埼玉県戸田市<br>
+        代表　安倍隼汰
       </div>
-      <div>
-        <h4>MENU</h4>
-        <ul><li><a href="#about">SPORTS LINKとは</a></li><li><a href="#program">活動内容</a></li><li><a href="#event">イベント情報</a></li><li><a href="#safety">安全への取り組み</a></li><li><a href="#contact">お問い合わせ</a></li></ul>
-      </div>
-      <div>
-        <h4>LINKS</h4>
-        <ul><li><a class="js-ig ext" target="_blank" rel="noopener noreferrer" href="#">Instagram</a></li><li><a class="ext" id="coach-search-link2" target="_blank" rel="noopener noreferrer" href="#">コーチ検索</a></li><li><a class="ext" id="coach-entry-link3" target="_blank" rel="noopener noreferrer" href="#">指導者 事前登録</a></li></ul>
+      <div class="foot-links">
+        <a href="#about">SPORTS LINKとは</a>
+        <a href="#program">活動内容</a>
+        <a href="#event">開催情報</a>
+        <a href="https://www.instagram.com/sports_link0921/" target="_blank" rel="noopener">Instagram</a>
       </div>
     </div>
-    <div class="privacy" id="privacy">
-      <strong>個人情報の取り扱い</strong><br>
-      お問い合わせ・お申込みでいただいた情報は、ご連絡とイベント運営のためだけに使い、目的外の利用や第三者への提供はしません。必要以上の情報（お子さまの学校名など）はお聞きしません。削除のご希望はInstagramのDMで受け付けます。
-    </div>
-    <p class="copy">運営：SPORTS LINK（代表 安倍隼汰）<br>© 2026 SPORTS LINK</p>
+    <p class="privacy">プライバシーについて：活動の様子を発信することがありますが、保護者の方の同意なく、お子さまの顔や氏名が分かる写真は掲載しません。会場名は防犯のため公開しておらず、申込が確定した方にのみご案内しています。</p>
+    <p style="margin-top:10px">© 2026 SPORTS LINK</p>
   </div>
 </footer>
 
 <script>
+const SITE = {
+  instagram: "https://www.instagram.com/sports_link0921/",
+  events: [
+    {
+      title: "アジリティスクール 第1期（全4回）",
+      meta: "土曜 16:30〜18:00（受付15:45）｜1回 1,500円／全4回 5,000円",
+      applyUrl: "https://www.instagram.com/sports_link0921/",
+      rounds: [
+        { date: "2026-11-07", label: "11/7（土）", theme: "基本動作・一歩目" },
+        { date: "2026-11-14", label: "11/14（土）", theme: "ターン・方向転換" },
+        { date: "2026-11-21", label: "11/21（土）", theme: "リアクション・身体操作" },
+        { date: "2026-11-28", label: "11/28（土）", theme: "瞬発力・総合" }
+      ]
+    },
+    {
+      title: "アジリティスクール 第2期（全4回）",
+      meta: "土曜 16:30〜18:00（受付15:45）｜1回 1,500円／全4回 5,000円",
+      applyUrl: "https://www.instagram.com/sports_link0921/",
+      rounds: [
+        { date: "2026-12-05", label: "12/5（土）", theme: "基本動作・一歩目" },
+        { date: "2026-12-12", label: "12/12（土）", theme: "ターン・方向転換" },
+        { date: "2026-12-19", label: "12/19（土）", theme: "リアクション・身体操作" },
+        { date: "2026-12-26", label: "12/26（土）", theme: "瞬発力・総合" }
+      ]
+    }
+  ]
+};
 (function(){
-  // ---- 設定値をリンクへ反映 ----
-  document.querySelectorAll('.js-ig').forEach(a=>a.href=SITE.instagram);
-  document.querySelectorAll('.js-ig-handle').forEach(s=>s.textContent=SITE.instagramHandle);
-  const set=(id,url)=>{const el=document.getElementById(id); if(el) el.href=url;};
-  ['coach-search-link','coach-search-link2'].forEach(id=>set(id,SITE.coachSearch));
-  ['coach-entry-link','coach-entry-link2','coach-entry-link3'].forEach(id=>set(id,SITE.coachEntry));
-  set('neko-link',SITE.nekonote);
-
-  // ---- イベント描画（日付が過ぎた回は自動で「終了」表示）----
-  const list=document.getElementById('event-list');
-  const today=new Date(); today.setHours(0,0,0,0);
-  const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-  SITE.events.forEach(ev=>{
-    const dates=ev.sessions.map(s=>new Date(s.date+'T00:00:00'));
-    const allDone=dates.every(d=>d<today);
-    const status=allDone?'closed':ev.status;
-    const label=allDone?'開催終了':ev.statusLabel;
-    const next=dates.find(d=>d>=today)||dates[dates.length-1];
-    const sess=ev.sessions.map((s,i)=>{
-      const d=dates[i]; const done=d<today;
-      return `<span class="sess${done?' done':''}"><b>${d.getMonth()+1}/${d.getDate()}</b> ${esc(s.theme)}${done?'（終了）':''}</span>`;
-    }).join('');
-    const btn=allDone?'' : ev.applyUrl
-      ? `<a class="btn btn-lime btn-sm ext" target="_blank" rel="noopener noreferrer" href="${esc(ev.applyUrl)}">詳細・申し込み</a>`
-      : `<a class="btn btn-lime btn-sm ext" target="_blank" rel="noopener noreferrer" href="${SITE.instagram}">参加はInstagramで相談</a>`;
-    const el=document.createElement('article');
-    el.className='ev reveal';
-    el.innerHTML=`
-      <div class="ev-date"><div class="m">${allDone?'LAST':'NEXT'}</div><div class="d">${next.getMonth()+1}/${next.getDate()}</div></div>
-      <div>
-        <span class="status st-${status}">${esc(label)}</span>
-        <h3>${esc(ev.title)}</h3>
-        <p class="meta">対象：${esc(ev.target)}　｜　${esc(ev.time)}　｜　${esc(ev.price)}</p>
-        <p class="meta">会場：${esc(ev.place)}</p>
-        <div class="sessions">${sess}</div>
-      </div>
-      <div>${btn}</div>`;
-    list.appendChild(el);
+  const DAY = 86400000;
+  const now = new Date();
+  const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  function parse(d){ const p = d.split("-"); return new Date(+p[0], +p[1]-1, +p[2]); }
+  function days(a, b){ return Math.round((b - a) / DAY); }
+  const list = document.getElementById("eventList");
+  SITE.events.forEach(function(ev){
+    const dates = ev.rounds.map(function(r){ return parse(r.date); });
+    const first = dates[0], last = dates[dates.length - 1];
+    let status, badgeClass, cta = "";
+    if (today > last) { status = "終了しました"; badgeClass = "done-b"; }
+    else if (today >= first) { status = "参加者募集中"; badgeClass = "open"; cta = '<a class="btn lime small" href="' + ev.applyUrl + '" target="_blank" rel="noopener">申し込む（Instagram）</a>'; }
+    else if (days(today, first) <= 30) { status = "近日募集開始"; badgeClass = "soon"; }
+    else { status = "開催予定"; badgeClass = "soon"; }
+    const roundsHtml = ev.rounds.map(function(r){
+      const past = parse(r.date) < today;
+      return '<div class="round' + (past ? " past" : "") + '"><div class="d">' + r.label + '</div><div class="t">' + r.theme + (past ? "・終了" : "") + '</div></div>';
+    }).join("");
+    const card = document.createElement("article");
+    card.className = "event-card reveal" + (today > last ? " done" : "");
+    card.innerHTML = '<div class="event-top"><h3>' + ev.title + '</h3><span class="badge ' + badgeClass + '">' + status + '</span>' + cta + '</div>' +
+      '<p class="event-meta">' + ev.meta + '</p><div class="rounds">' + roundsHtml + '</div>';
+    list.appendChild(card);
   });
-
-  // ---- ヘッダー縮小 ----
-  const hd=document.getElementById('top-header');
-  const onScroll=()=>hd.classList.toggle('scrolled',window.scrollY>24);
-  onScroll(); window.addEventListener('scroll',onScroll,{passive:true});
-
-  // ---- スマホメニュー ----
-  const btn=document.querySelector('.menu-btn'), nav=document.getElementById('gnav');
-  const close=()=>{nav.classList.remove('open');btn.setAttribute('aria-expanded','false');btn.setAttribute('aria-label','メニューを開く');};
-  btn.addEventListener('click',()=>{
-    const open=!nav.classList.contains('open');
-    nav.classList.toggle('open',open);
-    btn.setAttribute('aria-expanded',String(open));
-    btn.setAttribute('aria-label',open?'メニューを閉じる':'メニューを開く');
+  // next session chip
+  let next = null;
+  SITE.events.forEach(function(ev){
+    ev.rounds.forEach(function(r){ const d = parse(r.date); if (d >= today && (!next || d < next.d)) next = { d: d, label: r.label, title: ev.title }; });
   });
-  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',close));
-  document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});
-
-  // ---- スクロール表示 ----
-  const targets=document.querySelectorAll('.reveal,.sec-head');
-  if('IntersectionObserver' in window){
-    const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-in');io.unobserve(e.target);}}),{threshold:.15,rootMargin:'0px 0px -40px 0px'});
-    targets.forEach((t,i)=>{t.style.transitionDelay=(t.classList.contains('reveal')?(i%4)*60:0)+'ms';io.observe(t);});
-  } else targets.forEach(t=>t.classList.add('is-in'));
+  if (next) {
+    const chip = document.getElementById("nextSession");
+    if (chip) chip.textContent = next.title.replace("（全4回）", "") + "｜" + next.label + " 16:30〜18:00";
+  }
+  // mobile menu
+  const burger = document.getElementById("burger");
+  const menu = document.getElementById("mobileMenu");
+  burger.addEventListener("click", function(){
+    const open = menu.classList.toggle("open");
+    burger.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+  menu.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", function(){ menu.classList.remove("open"); }); });
+  // reveal
+  const io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll(".reveal").forEach(function(el){ io.observe(el); });
 })();
 </script>
 </body>
