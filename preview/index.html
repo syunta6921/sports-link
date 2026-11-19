@@ -147,6 +147,12 @@ footer img{width:74px;height:74px;border-radius:50%;margin:0 auto 14px}
 footer .fb{font-weight:900;font-size:17px;letter-spacing:.04em}
 footer .rep{font-size:13px;color:var(--sub);margin-top:6px}
 footer .cp{font-size:11.5px;color:#a3a398;margin-top:22px}
+
+/* no single-character line breaks */
+h1,h2,h3,summary{word-break:keep-all;line-break:strict}
+.nb{white-space:nowrap}
+.stats b{white-space:nowrap}
+.fees .row b{white-space:nowrap}
 </style>
 </head>
 <body>
@@ -319,7 +325,7 @@ footer .cp{font-size:11.5px;color:#a3a398;margin-top:22px}
 
 <section id="contact" style="padding-top:0">
   <div class="cta rv">
-    <h2>まずは1回、体験してみてください。</h2>
+    <h2><span class="nb">まずは1回、</span><span class="nb">体験してみてください。</span></h2>
     <p>申込はInstagramプロフィールのフォームから。<br>質問だけでも、DMで気軽にどうぞ。</p>
     <a class="btn" href="https://www.instagram.com/sports_link0921/" target="_blank" rel="noopener">Instagram @sports_link0921</a>
   </div>
